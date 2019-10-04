@@ -46,15 +46,15 @@ Because we did not have any 45-ohm resistors available the closest value resisto
 
 ## Seven segment bubble display
 
-The seven segment LED bubble display used for this project is the QDSP6064, which is a four-digit display. Seven segment means that there are seven individual segments that can be lit up to display a particular number plus a separate segment for the decimal point as seen in figure 4. Each segment has its own LED which must have a current limiting resistor is series with it. The QDSP6064 display is a common cathode configuration which means the segments have a common ground and a 3.3V signal from the teensy LC to the anode pin of each LED will cause them to light up. For multiple digit displays there are always 8 anode pins and the number of cathode pins is determined by the number of digits the display can represent. To display more than one digit on the display, the LED’s are pulsed at a high frequency. Each common cathode is linked to a digit. Only one cathode can be active at a time otherwise the display will duplicate the same number across all digits. Recommended operation is to cycle through the digits activating the cathode to ground and triggering the required segments to create the desired number.
+The seven segment LED bubble display used for this project is the QDSP6064, which is a four-digit display. Seven segment means that there are seven individual segments that can be lit up to display a particular number plus a separate segment for the decimal point as seen in figure 4. Each segment has its own LED which must have a current limiting resistor is series with it. The QDSP6064 display is a common cathode configuration which means the segments have a common ground and a 3.3V signal from the teensy LC to the anode pin of each LED will cause them to light up. For multiple digit displays there are always 8 anode pins and the number of cathode pins is determined by the number of digits the display can represent. To display more than one digit on the display, the LED’s are pulsed at a high frequency. Each common cathode is linked to a digit. Only one cathode can be active at a time otherwise the display will duplicate the same number across all digits. Recommended operation is to cycle through the digits activating the cathode to ground and triggering the required segments to create the desired number.	
 
-
+![image](https://user-images.githubusercontent.com/53545740/66182099-0f8d1100-e6d0-11e9-81a1-caee9b40cd33.png)
 
 Figure 4. Common cathode 7 segment configuration (Robomart, 2019)
 
 To calculate the current limiting resistors for the display the forward voltage and reverse current need to be obtained from the data sheet as seen in figure 5. The current limiting resistance can be found using the same equation as above. (3.3V – 1.6V) / 10mA = 170 ohms.
 
-
+![image](https://user-images.githubusercontent.com/53545740/66182120-229fe100-e6d0-11e9-8db1-72e5e9523e0a.png)
 
 Figure 5. Data sheet for QDSP-6064 LED display (Hewlett Packard Components, n.d.)
 
@@ -71,13 +71,13 @@ As seen in figure 2 a ten kiloohm resistor is connected from the gate of the mos
 The microcontrollers default pin mode is the input state. When the controller is in the input state it has high impedance, which means the circuit allows a relatively small amount of current through for the applied voltage. When a button is connected from an input pin to ground, a series current limiting resistor does not need to be added because of the high impedance limiting the current. However, a pullup resistor does need to be added to the line as seen in figure 1. Without a pullup resistor the input line acts as an antenna which picks up the surrounding interference. The interference will cause the pin to float and appear noisy and can cause undesired readings on the microcontroller. To stop the floating a pullup resistor typically between 1K-10K ohms is connected from the input line to the 3.3V pin on the controller (see figure 3). This causes the input line to have a constant 3.3V along it while the button is not pushed which is read as logic 1 by the microcontroller. When the button is pushed the current is sinking through the connection to ground and the voltage drops to 0V which is read as a logic 0 by the microcontroller.
 
 
-
+![image](https://user-images.githubusercontent.com/53545740/66182125-2cc1df80-e6d0-11e9-8e6a-22c7ecda8ce1.png)
 Figure 6. Pull up resistor configuration and transmission signal.
 
 When using mechanical buttons as an input for a microcontroller a process called de-bouncing needs to be performed. When a mechanical button is pushed there is always a 'bounce'. This is caused from the spring inside the button taking time to settle. The typical reading for a mechanical button being pushed can be seen in figure 4. We cannot remove the bouncing effect however, because we are using a microcontroller, we can add additional code to the program to ignore the bounce. This is done by creating an 'ignore time' which tells the program to ignore any input changes for a set time after the initial change. The ignore time is different for each button however, for the button used in this project an ignore time of 80-120 milliseconds was used.
 
 
-
+![image](https://user-images.githubusercontent.com/53545740/66182132-38ada180-e6d0-11e9-8d4b-d4fd25abd66f.png)
 Figure 7. Button de-bounce waveform. From (Electronics tutorials,2018)
 
 # Implementation
@@ -101,7 +101,7 @@ The following is a brief pseudo code used to base the project off. A library cal
 Figure 8 below shows the global variables, libraries and setup for the program. Most of the setup is from the template provided by the library so the display works correctly.
 
 
-
+![image](https://user-images.githubusercontent.com/53545740/66182140-42cfa000-e6d0-11e9-85d2-3adfe6a01764.png)
 Figure 8. Part 1 of code. Creating variables and including libraries
 
 Part two is the main part of the program controlling the reaction timer. The first part of the loop starts with a random number being generated controlling the time before the LED turns on. When the LED turns on the timer start counting up while the pause button is not pressed. Every 8155 microseconds the display value is increased by one. This accounts for one hundredth of a second. The reason the time isn’t 10000 microseconds is because the code doesn’t run instantaneously therefore some correction needs to be done to account for other tasks being performed.
@@ -163,6 +163,6 @@ Robomart. (2019). _Robomart_. Retrieved from 7 Segment LED Display Common Cathod
 Vishay. (2019, January 1). High Efficiency LED. Retrieved from [https://www.vishay.com/docs/83009/tlhg4900.pdf](https://www.vishay.com/docs/83009/tlhg4900.pdf)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQwMTc2NTAwNiwtMTE4Njg4NDQ1OCw5MT
-IxNDUyMTBdfQ==
+eyJoaXN0b3J5IjpbLTEzMjcxMjE2MDcsLTExODY4ODQ0NTgsOT
+EyMTQ1MjEwXX0=
 -->
