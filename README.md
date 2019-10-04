@@ -88,36 +88,30 @@ The following is a brief pseudo code used to base the project off. A library cal
 -Add libraries
 -Set variables
 -Set pin modes
-
-<![if !supportLists]>· <![endif]>Configure necessary variables for the library
-
-<![if !supportLists]>· <![endif]>Generate a random time before the LED turns on
-
-<![if !supportLists]>· <![endif]>When the LED turns on start timer and show on display
-
-<![if !supportLists]>· <![endif]>If the reset button is pressed. Reset the game and generate new random start time
-
-<![if !supportLists]>· <![endif]>If the pause button is pressed. Pause time and display the time the button was pressed
-
-<![if !supportLists]>· <![endif]>Wait until the reset button has been pushed to start new game.
+-Configure necessary variables for the library
+-Generate a random time before the LED turns on
+-When the LED turns on start timer and show on display
+-If the reset button is pressed. Reset the game and generate new random start time
+-If the pause button is pressed. Pause time and display the time the button was pressed
+-Wait until the reset button has been pushed to start new game.
 
 ## Final code
 
 Figure 8 below shows the global variables, libraries and setup for the program. Most of the setup is from the template provided by the library so the display works correctly.
 
-<![if !vml]>![](file:///C:/Users/jackh/AppData/Local/Temp/msohtmlclip1/01/clip_image016.jpg)<![endif]>
+
 
 Figure 8. Part 1 of code. Creating variables and including libraries
 
 Part two is the main part of the program controlling the reaction timer. The first part of the loop starts with a random number being generated controlling the time before the LED turns on. When the LED turns on the timer start counting up while the pause button is not pressed. Every 8155 microseconds the display value is increased by one. This accounts for one hundredth of a second. The reason the time isn’t 10000 microseconds is because the code doesn’t run instantaneously therefore some correction needs to be done to account for other tasks being performed.
 
-<![if !vml]>![](file:///C:/Users/jackh/AppData/Local/Temp/msohtmlclip1/01/clip_image018.jpg)<![endif]>
+
 
 Figure 9. Part 2 of code. Create string to show on display and interrupts for pause and reset button.
 
 The display value is turned into a string where it is controlled by the SevSeg library to produce the digits on the LED display. The %04d adds leading zeros to the string filling out the display. If the reset button is pressed the display resets, LED is turned off and the random start time is changed. An interrupt service routine is used for the pause and reset buttons. They are debounced by reading the first falling edge then ignoring any other falling edges for a debounce time.
 
-<![if !vml]>![](file:///C:/Users/jackh/AppData/Local/Temp/msohtmlclip1/01/clip_image019.png)<![endif]>
+
 
 Figure 10. Changing the way, the common cathode sinks current for mosfet design.
 
@@ -127,7 +121,7 @@ Because the design of this project uses N-channel mosfet’s to sink the current
 
 Figure 11 shows the final layout for the reaction timer. The reset button is on the top left and pause button on the bottom right.
 
-<![if !vml]>![](file:///C:/Users/jackh/AppData/Local/Temp/msohtmlclip1/01/clip_image021.jpg)<![endif]>
+
 
 Figure 11. Wiring of the final product
 
@@ -135,13 +129,13 @@ Figure 11. Wiring of the final product
 
 Figure 12 below is the addition code used to test the accuracy of the timer. The brief states that the timer must be accurate to 10ms over a 10 second time span. The code below freezes the timer when it reaches a set time. This time can be compared with an oscilloscope reading of the LED turning from on to off.
 
-<![if !vml]>![](file:///C:/Users/jackh/AppData/Local/Temp/msohtmlclip1/01/clip_image023.jpg)<![endif]>
+
 
 Figure 12. Code used for testing the accuracy of the timer
 
 Figure 13 shows the oscilloscope reading for 10 second timespan. The measurement shows the actual time as being 9.920s which is within the acceptable 10ms threshold.
 
-<![if !vml]>![](file:///C:/Users/jackh/AppData/Local/Temp/msohtmlclip1/01/clip_image025.jpg)<![endif]>
+
 
 Figure 13. Oscilloscope reading of LED to be compared with timer
 
@@ -168,5 +162,5 @@ Robomart. (2019). _Robomart_. Retrieved from 7 Segment LED Display Common Cathod
 Vishay. (2019, January 1). High Efficiency LED. Retrieved from [https://www.vishay.com/docs/83009/tlhg4900.pdf](https://www.vishay.com/docs/83009/tlhg4900.pdf)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NjY0ODk5MjksOTEyMTQ1MjEwXX0=
+eyJoaXN0b3J5IjpbLTExODY4ODQ0NTgsOTEyMTQ1MjEwXX0=
 -->
