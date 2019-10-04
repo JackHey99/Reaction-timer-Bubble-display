@@ -1,7 +1,7 @@
 
 
 ## **Bubble display project**
-
+![image](https://user-images.githubusercontent.com/53545740/66182066-e2406300-e6cf-11e9-892f-1831124e7ea1.png)
 
 
 
@@ -25,6 +25,7 @@ The components needed to complete this project are the following.
 
 The figure below is a schematic of the reaction timer which was used to wire the final design seen in figure 11.
 
+![image](https://user-images.githubusercontent.com/53545740/66182074-f1bfac00-e6cf-11e9-8a20-9df06e70afa9.png)
 
 Figure 2. Wiring schematic for reaction timer
 
@@ -33,7 +34,7 @@ Figure 2. Wiring schematic for reaction timer
 A current limiting series resistor needs to be connected to the output pin with the LED. The current flowing in an LED is an exponential function of voltage across the LED. If a series resistor is not added the current can overload the LED and blow it. The following calculation is done to find the correct series resistor for a LED colour and type.
 
 
-
+![image](https://user-images.githubusercontent.com/53545740/66182088-03a14f00-e6d0-11e9-85ec-8ee732c244b1.png)
 Figure 3. Green LED datasheet. From (Vishay, 2019)
 
 Vs - Supply Voltage Vf - Forward voltage of the LED. This is the voltage required to turn on the LED.  
@@ -162,5 +163,6 @@ Robomart. (2019). _Robomart_. Retrieved from 7 Segment LED Display Common Cathod
 Vishay. (2019, January 1). High Efficiency LED. Retrieved from [https://www.vishay.com/docs/83009/tlhg4900.pdf](https://www.vishay.com/docs/83009/tlhg4900.pdf)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExODY4ODQ0NTgsOTEyMTQ1MjEwXX0=
+eyJoaXN0b3J5IjpbLTQwMTc2NTAwNiwtMTE4Njg4NDQ1OCw5MT
+IxNDUyMTBdfQ==
 -->
