@@ -107,12 +107,13 @@ Figure 8. Part 1 of code. Creating variables and including libraries
 Part two is the main part of the program controlling the reaction timer. The first part of the loop starts with a random number being generated controlling the time before the LED turns on. When the LED turns on the timer start counting up while the pause button is not pressed. Every 8155 microseconds the display value is increased by one. This accounts for one hundredth of a second. The reason the time isn’t 10000 microseconds is because the code doesn’t run instantaneously therefore some correction needs to be done to account for other tasks being performed.
 
 
+![image](https://user-images.githubusercontent.com/53545740/66182145-4fec8f00-e6d0-11e9-8581-9c579208d24f.png)
 
 Figure 9. Part 2 of code. Create string to show on display and interrupts for pause and reset button.
 
 The display value is turned into a string where it is controlled by the SevSeg library to produce the digits on the LED display. The %04d adds leading zeros to the string filling out the display. If the reset button is pressed the display resets, LED is turned off and the random start time is changed. An interrupt service routine is used for the pause and reset buttons. They are debounced by reading the first falling edge then ignoring any other falling edges for a debounce time.
 
-
+![image](https://user-images.githubusercontent.com/53545740/66182156-5d097e00-e6d0-11e9-891e-ee985f5b9679.png)
 
 Figure 10. Changing the way, the common cathode sinks current for mosfet design.
 
@@ -123,6 +124,7 @@ Because the design of this project uses N-channel mosfet’s to sink the current
 Figure 11 shows the final layout for the reaction timer. The reset button is on the top left and pause button on the bottom right.
 
 
+![image](https://user-images.githubusercontent.com/53545740/66182162-6692e600-e6d0-11e9-8113-d46aa68ee183.png)
 
 Figure 11. Wiring of the final product
 
@@ -130,13 +132,14 @@ Figure 11. Wiring of the final product
 
 Figure 12 below is the addition code used to test the accuracy of the timer. The brief states that the timer must be accurate to 10ms over a 10 second time span. The code below freezes the timer when it reaches a set time. This time can be compared with an oscilloscope reading of the LED turning from on to off.
 
-
+![image](https://user-images.githubusercontent.com/53545740/66182171-6eeb2100-e6d0-11e9-9df9-3de61cb9cf6b.png)
 
 Figure 12. Code used for testing the accuracy of the timer
 
 Figure 13 shows the oscilloscope reading for 10 second timespan. The measurement shows the actual time as being 9.920s which is within the acceptable 10ms threshold.
 
 
+![image](https://user-images.githubusercontent.com/53545740/66182180-7a3e4c80-e6d0-11e9-8295-77e7ec1a0cf9.png)
 
 Figure 13. Oscilloscope reading of LED to be compared with timer
 
@@ -163,6 +166,6 @@ Robomart. (2019). _Robomart_. Retrieved from 7 Segment LED Display Common Cathod
 Vishay. (2019, January 1). High Efficiency LED. Retrieved from [https://www.vishay.com/docs/83009/tlhg4900.pdf](https://www.vishay.com/docs/83009/tlhg4900.pdf)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjcxMjE2MDcsLTExODY4ODQ0NTgsOT
-EyMTQ1MjEwXX0=
+eyJoaXN0b3J5IjpbMTkxMzM5MTcyMCwtMTE4Njg4NDQ1OCw5MT
+IxNDUyMTBdfQ==
 -->
