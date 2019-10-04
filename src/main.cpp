@@ -15,12 +15,12 @@ uint32_t LED_PIN = 19;
 uint32_t random_start_time_ms = 0;
 uint32_t current_time_ms = 0;
 unsigned long timer_us = 0;
-int display_value_us = 0;
+int display_value_ms = 0;
 
 void ISR_pause_button_pressed();
 void ISR_reset_button_pressed();
 
-//------------------------------------------//
+//---------------------------------------------//
 
 void setup()
 
@@ -74,7 +74,7 @@ void loop()
     digitalWrite(LED_PIN, HIGH);
     LED_state = HIGH;
     char tempString[10]; //Used for sprintf
-    sprintf(tempString, "%04d", display_value_us); //Convert display_value_us into a string
+    sprintf(tempString, "%04d", display_value_ms); //Convert display_value_ms into a string
 
     //Produce an output on the display
     myDisplay.DisplayString(tempString, 2); //(numberToDisplay, decimal point location in binary number)
@@ -84,33 +84,9 @@ void loop()
       if (micros() - timer_us >= 8155)       // Not 10000 as we need to adjust for process time for other tasks
       {
         timer_us = micros();
-        display_value_us++;
-        /* while (display_value_us >= 2000)
-        {
-          pause_button_pressed = true;
-          digitalWrite(LED_PIN, LOW);
-          char tempString[10]; //Used for sprintf
-
-          sprintf(tempString, "%4d", display_value_us); //Convert display_value_us into a string that is right adjusted
-
-          //Produce an output on the display
-
-          myDisplay.DisplayString(tempString, 2); //(numberToDisplay, decimal point location in binary number [4 means the third digit])
-        } */
+        display_value_ms++;
       }
     }
-    /* while (pause_button_pressed == true)
-    {
-      digitalWrite(LED_PIN, LOW);
-      char tempString[10]; //Used for sprintf
-
-      sprintf(tempString, "%4d", display_value_us); //Convert display_value_us into a string that is right adjusted
-
-      //Produce an output on the display
-
-      myDisplay.DisplayString(tempString, 2); //(numberToDisplay, decimal point location in binary number [4 means the third digit])
-      
-    } */
   }
 
   if (reset_button_pressed == true)
@@ -118,7 +94,7 @@ void loop()
     current_time_ms = millis();
     digitalWrite(LED_PIN, LOW);
     reset_button_pressed = false;
-    display_value_us = 0;           //resets the time on the display
+    display_value_ms = 0;           //resets the time on the display
     pause_button_pressed = false;
     LED_state = LOW;
   }
