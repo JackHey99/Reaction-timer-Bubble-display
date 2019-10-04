@@ -25,7 +25,6 @@ The components needed to complete this project are the following.
 
 The figure below is a schematic of the reaction timer which was used to wire the final design seen in figure 11.
 
-<![if !vml]>![](file:///C:/Users/jackh/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg)<![endif]> 
 
 Figure 2. Wiring schematic for reaction timer
 
@@ -33,7 +32,7 @@ Figure 2. Wiring schematic for reaction timer
 
 A current limiting series resistor needs to be connected to the output pin with the LED. The current flowing in an LED is an exponential function of voltage across the LED. If a series resistor is not added the current can overload the LED and blow it. The following calculation is done to find the correct series resistor for a LED colour and type.
 
-[<![if !vml]>![Green LED datasheet ](file:///C:/Users/jackh/AppData/Local/Temp/msohtmlclip1/01/clip_image006.jpg)<![endif]>](https://user-images.githubusercontent.com/53545740/63909001-4dfe3300-ca75-11e9-9df3-d3eb50594236.JPG)
+
 
 Figure 3. Green LED datasheet. From (Vishay, 2019)
 
@@ -48,13 +47,13 @@ Because we did not have any 45-ohm resistors available the closest value resisto
 
 The seven segment LED bubble display used for this project is the QDSP6064, which is a four-digit display. Seven segment means that there are seven individual segments that can be lit up to display a particular number plus a separate segment for the decimal point as seen in figure 4. Each segment has its own LED which must have a current limiting resistor is series with it. The QDSP6064 display is a common cathode configuration which means the segments have a common ground and a 3.3V signal from the teensy LC to the anode pin of each LED will cause them to light up. For multiple digit displays there are always 8 anode pins and the number of cathode pins is determined by the number of digits the display can represent. To display more than one digit on the display, the LED’s are pulsed at a high frequency. Each common cathode is linked to a digit. Only one cathode can be active at a time otherwise the display will duplicate the same number across all digits. Recommended operation is to cycle through the digits activating the cathode to ground and triggering the required segments to create the desired number.
 
-<![if !vml]>![](file:///C:/Users/jackh/AppData/Local/Temp/msohtmlclip1/01/clip_image008.jpg)<![endif]>
+
 
 Figure 4. Common cathode 7 segment configuration (Robomart, 2019)
 
 To calculate the current limiting resistors for the display the forward voltage and reverse current need to be obtained from the data sheet as seen in figure 5. The current limiting resistance can be found using the same equation as above. (3.3V – 1.6V) / 10mA = 170 ohms.
 
-<![if !vml]>![](file:///C:/Users/jackh/AppData/Local/Temp/msohtmlclip1/01/clip_image010.jpg)<![endif]>
+
 
 Figure 5. Data sheet for QDSP-6064 LED display (Hewlett Packard Components, n.d.)
 
@@ -70,13 +69,13 @@ As seen in figure 2 a ten kiloohm resistor is connected from the gate of the mos
 
 The microcontrollers default pin mode is the input state. When the controller is in the input state it has high impedance, which means the circuit allows a relatively small amount of current through for the applied voltage. When a button is connected from an input pin to ground, a series current limiting resistor does not need to be added because of the high impedance limiting the current. However, a pullup resistor does need to be added to the line as seen in figure 1. Without a pullup resistor the input line acts as an antenna which picks up the surrounding interference. The interference will cause the pin to float and appear noisy and can cause undesired readings on the microcontroller. To stop the floating a pullup resistor typically between 1K-10K ohms is connected from the input line to the 3.3V pin on the controller (see figure 3). This causes the input line to have a constant 3.3V along it while the button is not pushed which is read as logic 1 by the microcontroller. When the button is pushed the current is sinking through the connection to ground and the voltage drops to 0V which is read as a logic 0 by the microcontroller.
 
-[<![if !vml]>![Pull Up resistor](file:///C:/Users/jackh/AppData/Local/Temp/msohtmlclip1/01/clip_image012.jpg)<![endif]>](https://user-images.githubusercontent.com/53545740/64058032-13bd9e80-cbf9-11e9-9c66-45fe7edba810.JPG)
+
 
 Figure 6. Pull up resistor configuration and transmission signal.
 
 When using mechanical buttons as an input for a microcontroller a process called de-bouncing needs to be performed. When a mechanical button is pushed there is always a 'bounce'. This is caused from the spring inside the button taking time to settle. The typical reading for a mechanical button being pushed can be seen in figure 4. We cannot remove the bouncing effect however, because we are using a microcontroller, we can add additional code to the program to ignore the bounce. This is done by creating an 'ignore time' which tells the program to ignore any input changes for a set time after the initial change. The ignore time is different for each button however, for the button used in this project an ignore time of 80-120 milliseconds was used.
 
-[<![if !vml]>![Button Bounce](file:///C:/Users/jackh/AppData/Local/Temp/msohtmlclip1/01/clip_image014.jpg)<![endif]>](https://user-images.githubusercontent.com/53545740/64058038-246e1480-cbf9-11e9-8b42-ee225b6b79e3.JPG)
+
 
 Figure 7. Button de-bounce waveform. From (Electronics tutorials,2018)
 
@@ -86,11 +85,9 @@ Figure 7. Button de-bounce waveform. From (Electronics tutorials,2018)
 
 The following is a brief pseudo code used to base the project off. A library called SevSeg Written by Dean Reading, 2012 was used to control the process of lighting up each segment to generate a digit. The code that was created for this project controls the function of the reaction timer. The SevSeg library is then imported and the necessary data is given for the display to light up accordingly.
 
-<![if !supportLists]>· <![endif]>Add libraries
-
-<![if !supportLists]>· <![endif]>Set variables
-
-<![if !supportLists]>· <![endif]>Set pin modes
+-Add libraries
+-Set variables
+-Set pin modes
 
 <![if !supportLists]>· <![endif]>Configure necessary variables for the library
 
@@ -171,5 +168,5 @@ Robomart. (2019). _Robomart_. Retrieved from 7 Segment LED Display Common Cathod
 Vishay. (2019, January 1). High Efficiency LED. Retrieved from [https://www.vishay.com/docs/83009/tlhg4900.pdf](https://www.vishay.com/docs/83009/tlhg4900.pdf)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE4OTU5NzI0Myw5MTIxNDUyMTBdfQ==
+eyJoaXN0b3J5IjpbLTE3NjY0ODk5MjksOTEyMTQ1MjEwXX0=
 -->
