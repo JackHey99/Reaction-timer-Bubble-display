@@ -15,7 +15,15 @@ The aim of this project is to create a reaction time tester using a LED, push bu
 
 The components needed to complete this project are the following.
 
-he figure below is a schematic of the reaction timer which was used to wire the final design seen in figure 11.
+ - Current limiting resistors
+ - Gate - Source resistor
+ - Normally open push button
+ - Light emitting diode 'LED'
+ - Teensy LC
+ - N-Channel Mosfet's
+ - 7 Segment bubble display
+
+The figure below is a schematic of the reaction timer which was used to wire the final design seen in figure 11.
 
 <![if !vml]>![](file:///C:/Users/jackh/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg)<![endif]> 
 
@@ -163,5 +171,5 @@ Robomart. (2019). _Robomart_. Retrieved from 7 Segment LED Display Common Cathod
 Vishay. (2019, January 1). High Efficiency LED. Retrieved from [https://www.vishay.com/docs/83009/tlhg4900.pdf](https://www.vishay.com/docs/83009/tlhg4900.pdf)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjcxNzE4NDUyLDkxMjE0NTIxMF19
+eyJoaXN0b3J5IjpbMTE4OTU5NzI0Myw5MTIxNDUyMTBdfQ==
 -->
