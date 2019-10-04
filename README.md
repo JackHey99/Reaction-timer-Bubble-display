@@ -1,41 +1,33 @@
-<![endif]-->
+
 
 ## **Bubble display project**
 
 
-<![endif]-->
 
-**Bubble display project**
 
-<![if !vml]>![Image result for waterfall project structure](file:///C:/Users/jackh/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg)<![endif]>
-
-Figure 1. Project structure
-
-_(Presentation Process, 2013)_
+Figure 1. Project structure (Presentation Process, 2013)
 
 # Requirements
 
-The aim of this project is to create a reaction time tester using a LED, push button and a Teensy LC interfaced with a 4-digit LED bubble display. The display must show time in hundredths of a second and must have less than a ten-millisecond deviation over a ten second timespan. Other conditions that the final product must adhere to are, debouncing of push buttons, use of external interrupts, use of N-Fets and no delay/blocking functions.
+The aim of this project is to create a reaction time tester using a LED, push button and a Teensy LC interfaced with a 4-digit LED bubble display. The display must show time in hundredths of a second and must have less than a ten-millisecond deviation over a ten second timespan. Other conditions that the final product must adhere to are, denouncing of push buttons, use of external interrupts, use of N-Fets and no delay/blocking functions.
 
 # Design
 
 The components needed to complete this project are the following.
 
-<![if !supportLists]>· <![endif]>Current limiting resistors
+ - Current limiting resistors
+   
+   Gate-source resistors
+   
+   Normally open push buttons
+   
+   Light emitting diode “LED”
+   
+   Teensy LC
+   
+   N channel mosfet’s below is
 
-<![if !supportLists]>· <![endif]>Gate-source resistors
-
-<![if !supportLists]>· <![endif]>Normally open push buttons
-
-<![if !supportLists]>· <![endif]>Light emitting diode “LED”
-
-<![if !supportLists]>· <![endif]>Teensy LC
-
-<![if !supportLists]>· <![endif]>N channel mosfet’s
-
-<![if !supportLists]>· <![endif]>7 segment bubble display
-
-The figure below is a schematic of the reaction timer which was used to wire the final design seen in figure 11.
+a schematic of the reaction timer which was used to wire the final design seen in figure 11.
 
 <![if !vml]>![](file:///C:/Users/jackh/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg)<![endif]> 
 
@@ -183,5 +175,5 @@ Robomart. (2019). _Robomart_. Retrieved from 7 Segment LED Display Common Cathod
 Vishay. (2019, January 1). High Efficiency LED. Retrieved from [https://www.vishay.com/docs/83009/tlhg4900.pdf](https://www.vishay.com/docs/83009/tlhg4900.pdf)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY3NzA2NTcwOCw5MTIxNDUyMTBdfQ==
+eyJoaXN0b3J5IjpbMTU2MzQzMDAwNCw5MTIxNDUyMTBdfQ==
 -->
