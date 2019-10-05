@@ -1,7 +1,11 @@
+![cover sheet](https://user-images.githubusercontent.com/53545740/66248824-e4fe8f00-e787-11e9-8e1f-cf017b317d31.JPG)
 
 
-## **Bubble display project**
-![image](https://user-images.githubusercontent.com/53545740/66182066-e2406300-e6cf-11e9-892f-1831124e7ea1.png)
+# **Bubble display project**
+
+## Jack Heyward ID#2174132 - !
+
+[image](https://user-images.githubusercontent.com/53545740/66182066-e2406300-e6cf-11e9-892f-1831124e7ea1.png)
 
 
 
@@ -166,6 +170,6 @@ Robomart. (2019). _Robomart_. Retrieved from 7 Segment LED Display Common Cathod
 Vishay. (2019, January 1). High Efficiency LED. Retrieved from [https://www.vishay.com/docs/83009/tlhg4900.pdf](https://www.vishay.com/docs/83009/tlhg4900.pdf)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkxMzM5MTcyMCwtMTE4Njg4NDQ1OCw5MT
-IxNDUyMTBdfQ==
+eyJoaXN0b3J5IjpbLTIwNDM4NTA5NzgsMTkxMzM5MTcyMCwtMT
+E4Njg4NDQ1OCw5MTIxNDUyMTBdfQ==
 -->
