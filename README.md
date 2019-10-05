@@ -157,6 +157,9 @@ Many improvements could be made to this project if it was to be redone. The accu
 
 The aim of this project was to create a reaction time tester using a LED, push button and a Teensy LC interfaced with a 4-digit LED bubble display. The display had to show time in hundredths of a second and have less than a ten-millisecond deviation over a ten second timespan. Other conditions that the final product needed to adhere to were, debouncing of push buttons, use of external interrupts, use of N-Fets and no delay/blocking functions. The final product met all the specifications and constraints in the brief. Some future improvements and additions could be added in future however, the current setup illustrates a working prototype within the brief that has the capability of improvements.
 
+Video Report of Project can be found at:
+[https://youtu.be/G-8vHoxMaJ0](https://youtu.be/G-8vHoxMaJ0)
+
 # References
 
 Electronic Tutorials. (2018, April 25). Input Interfacing Circuits Connect to the Real World. Retrieved from [https://www.electronics-tutorials.ws/io/input-interfacing-circuits.html](https://www.electronics-tutorials.ws/io/input-interfacing-circuits.html)
@@ -172,9 +175,8 @@ Vishay. (2019, January 1). High Efficiency LED. Retrieved from [https://www.vish
 
 
 
-Video Report of Project can be found at:
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIyMTAyNDYyMSwxOTEzMzkxNzIwLC0xMT
-g2ODg0NDU4LDkxMjE0NTIxMF19
+eyJoaXN0b3J5IjpbNDAxNzQ1NDAwLC0yMjEwMjQ2MjEsMTkxMz
+M5MTcyMCwtMTE4Njg4NDQ1OCw5MTIxNDUyMTBdfQ==
 -->
