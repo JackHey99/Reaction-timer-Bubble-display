@@ -169,7 +169,12 @@ Robomart. (2019). _Robomart_. Retrieved from 7 Segment LED Display Common Cathod
 
 Vishay. (2019, January 1). High Efficiency LED. Retrieved from [https://www.vishay.com/docs/83009/tlhg4900.pdf](https://www.vishay.com/docs/83009/tlhg4900.pdf)
 
+
+
+
+Video Report of Project can be found at:
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ2NTQxMjYsMTkxMzM5MTcyMCwtMTE4Nj
-g4NDQ1OCw5MTIxNDUyMTBdfQ==
+eyJoaXN0b3J5IjpbLTIyMTAyNDYyMSwxOTEzMzkxNzIwLC0xMT
+g2ODg0NDU4LDkxMjE0NTIxMF19
 -->
